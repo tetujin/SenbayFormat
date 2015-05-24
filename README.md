@@ -1,11 +1,13 @@
 # SenbayFormat
 
 ## Overview
-[Senbay](http://www.senbay.info "Senbay___")で撮影したQRコードに保存されたセンサデータを取り出す為のライブラリです。
-
+SenbayFormatは、[Senbay](http://www.senbay.info "Senbay")で撮影したQRコードに保存されたセンサデータを管理する為のライブラリです。
+SenbayFormatには、SnebayFormatでのセンサデータの出力と圧縮、解凍、取得機能が備わっています。
+データ圧縮には、121進数を用いた圧縮を用いています。
 
 ## What's new?
-
+### Version 1.0
+_SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しました。本メソッドでは、Senbay形式の文字列を引数に与えることで、形式のバージョン(0-4)を返します。_
 
 ## Coding
 
