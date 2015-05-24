@@ -23,7 +23,7 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 * SensorDataManagerを用いたセンサデータの取得
 
 
-### 1.121進数でのEncode, Decode
+### 121進数でのEncode, Decode
 #### Encode
         long sampleValue01 = 12345;
         NSLog(@"%ld", sampleValue01);
@@ -42,6 +42,19 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
         NSLog(@"%g", decodedValue02);
 
 
+### 5種類のSenbay形式でのEncode, Decode
+|バージョン番号|形式|バージョン情報の有無|圧縮の有無|
+|0||||
+|1||||
+|2||||
+|3||||
+|4||||
+
+
+
+#### CSV形式での保存
+
+
 ## Adding the static library to your iOS project
 1. SenbayFormat内の以下のファイルを、プロジェクトに保存して下さい。
 
@@ -57,8 +70,8 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 
 2. SenbayDataFormatCompressor.hとSensorDataManager.hをインポートして下さい。
 
-`#import "SenbayDataFormatCompressor.h"` 
-`#import "SensorDataManager.h"`
+    #import "SenbayDataFormatCompressor.h" 
+    #import "SensorDataManager.h"
 
 
 ## Links
@@ -66,8 +79,8 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 * [Takuro YONEZAWA](http://www.ht.sfc.keio.ac.jp/~takuro "Takuro YONEZAWA")
 * [Tokuda Laboratory](http://www.ht.sfc.keio.ac.jp "Tokuda Laboratory")
 * [Senbay Offical Webpage](http://www.senbay.info "Senbay")
-* [Senbay App Store](http://www "App Store")
-* [Senbay Reader App Store](http://www "App Store")
+* [Senbay App Store](https://itunes.apple.com/jp/app/id975034760 "App Store")
+* [Senbay Reader App Store](https://itunes.apple.com/jp/app/senbay-reader-senbayde-cuo/id975073024?mt=8 "App Store")
 
 
 ## Reference
