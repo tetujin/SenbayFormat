@@ -25,6 +25,7 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 
 ### 121進数でのEncode, Decode
 #### Encode
+```Objective-C
         long sampleValue01 = 12345;
         NSLog(@"%ld", sampleValue01);
         SpecialNumber* spNum = [[SpecialNumber alloc] init];
@@ -32,6 +33,7 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
         NSLog(@"%@", encodedValue01);
         long decodedValue01 = [spNum decodeLongBaseX:baseNumber value:encodedValue01];
         NSLog(@"%ld", decodedValue01);
+```
 
 #### Decode
         double sampleValue02 = -234.00345;
