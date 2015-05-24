@@ -1,31 +1,27 @@
 # SenbayFormat
 
 ## Overview
---------------------------
-[Senbay](http://www.senbay.info "Senbay")
+[Senbay](http://www.senbay.info "Senbay___")で撮影したQRコードに保存されたセンサデータを取り出す為のライブラリです。
+
 
 ## What's new?
---------------------------
 
 
 ## Coding
---------------------------
 
 
 ## License
---------------------------
 
 
 ## Test code
---------------------------
 `SenbayFormat.xcodeproj`をダブルクリックして、Xcodeでプロジェクトを開いて下さい。
 
 
 
 
 ## Adding the static library to your iOS project
--------------------------------------------------
 1. SenbayFormat内の以下のファイルを、プロジェクトに保存して下さい。
+
 * ReservedKeys.h
 * ReservedKeys.m
 * SenbayDataFormatCompressor.h
@@ -36,11 +32,11 @@
 * SpecialNumber.m
 
 2. SenbayDataFormatCompressor.hをインポートして下さい。
+
 `#import "SenbayDataFormatCompressor.h"` 
 
 
 ## Links
---------------------------
 * [Yuuki NISHIYAMA](http://www.ht.sfc.keio.ac.jp/~tetujin "Yuuki NISHIYAMA")
 * [Takuro YONEZAWA](http://www.ht.sfc.keio.ac.jp/~takuro "Takuro YONEZAWA")
 * [Tokuda Laboratory](http://www.ht.sfc.keio.ac.jp "Tokuda Laboratory")
@@ -50,4 +46,3 @@
 
 
 ## Reference
-----------------------------
