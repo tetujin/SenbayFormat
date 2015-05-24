@@ -34,6 +34,7 @@
 #import <Foundation/Foundation.h>
 #import "SenbayDataFormatCompressor.h"
 #import "SpecialNumber.h"
+#import "SensorDataManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -112,14 +113,21 @@ int main(int argc, const char * argv[]) {
         
         // [Format No.4] Version information and compression
         NSString* sampleText05 = [NSString stringWithFormat:@"V:%d,%@",dataCompressionVerNumber, [compressor encode:sampleText02 baseNumber:baseNumber]];
+        NSString *decodedText05 = @"";
         NSLog(@"%@",sampleText05);
         NSLog(@"Format version is ... %d", [compressor getVersionNumber:sampleText05]);
         if([compressor getVersionNumber:sampleText05] == dataCompressionVerNumber){
-            NSString *decodedText05 = [compressor decode:sampleText04 baseNumber:baseNumber];
+            decodedText05 = [compressor decode:sampleText05 baseNumber:baseNumber];
             NSLog(@"%@", decodedText05);
         }
     
-        
+        // Get sensor data by using SenbayDataManager
+        SensorDataManager* manager = [[SensorDataManager alloc] init];
+        [manager setSensorDataString:decodedText05];
+        NSLog(@"%@", [manager getDataByKey:@"TIME"]);
+        NSLog(@"%@", [manager getDataByKey:@"ACCX"]);
+        NSLog(@"%@", [manager getDataByKey:@"ACCY"]);
+        NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
     }
     return 0;
 }
