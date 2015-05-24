@@ -43,13 +43,13 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 
 
 ### 5種類のSenbay形式でのEncode, Decode
-|バージョン番号|形式|バージョン情報の有無|圧縮の有無|
-|---|---|---|---|
-|0||||
-|1||||
-|2||||
-|3||||
-|4||||
+|バージョン番号|形式|バージョン情報の有無|圧縮の有無|サンプル|
+|---|---|---|---|---|
+|0|CSV|×|×|1234,0.1,0.01,0.001|
+|1|Key-Value|×|×|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001|
+|2|Key-Value|×|○|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001|
+|3|Key-Value|○|×|V:3,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001|
+|4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001|
 
 
 
