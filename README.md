@@ -56,28 +56,68 @@ NSLog(@"%g", decodedValue02);
 |4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|V:4,0xxx,1xxx,2xxx,3xxx|
 サンプル(圧縮後)の_x_は、121進数圧縮後の文字列
 
-#### Version 1 (CSV, バージョン情報無し, 圧縮無し)
-CSV形式の文字列をそのまま、QRコードに変換
+#### Version 0 (CSV, バージョン情報無し, 圧縮無し)
+CSV形式の文字列をそのまま、QRコードに変換する。
+データの順番は、以下の表の通りにする。
 
 |0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |DATE|TIME|ACCX|ACCY|ACCZ|GYROX|GYROY|GYROZ|LNG|LAT|10|11|HEAD|13|14|15|ALT|
 
+`[例] NSString DATE,TIME,ACCX,ACCY,ACCZ,GYROX,GYROY,GYROZ,LNG,LAT,10,11,HEAD,13,14,15,ALT`
 
-#### Version 2 (Key-Value, バージョン情報無し, 圧縮無し)
+
+#### Version 1 (Key-Value, バージョン情報無し, 圧縮無し)
 ```Objective-C
+NSString* sampleText02 = @"TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001";
+NSLog(@"%@", sampleText02);
+NSLog(@"Format version is ... %d", [compressor getVersionNumber:sampleText02]);
+// Get sensor data by using SenbayDataManager
+SensorDataManager* manager = [[SensorDataManager alloc] init];
+[manager setSensorDataString:decodedText05];
+NSLog(@"%@", [manager getDataByKey:@"TIME"]);
 ```
 
-#### Version 3 (Key-Value, バージョン情報無し, 圧縮有り)
+#### Version 2 (Key-Value, バージョン情報無し, 圧縮有り)
 ```Objective-C
+// [Format No.2] No version information and compression
+SenbayDataFormatCompressor* compressor = [[SenbayDataFormatCompressor alloc] init];
+NSString* sampleText02 = @"TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001";
+NSString* sampleText03 = [compressor encode:sampleText02 baseNumber:121]
+NSLog(@"%@", sampleText03);
+NSLog(@"Format version is ... %d", [compressor getVersionNumber:sampleText03]);
 ```
 
-#### Version 4 (Key-Value, バージョン情報有り, 圧縮無し)
+#### Version 3 (Key-Value, バージョン情報有り, 圧縮無し)
 ```Objective-C
+NSString* sampleText04 = [NSString stringWithFormat:@"V:%d,%@", dataNormalVersionNumber, sampleText02];
+NSLog(@"%@",sampleText04);
+NSLog(@"Format version is ... %d", [compressor getVersionNumber:sampleText04]);
+if([compressor getVersionNumber:sampleText04] == dataNormalVersionNumber){
+  NSLog(@"%@", sampleText04);
+}
 ```
 
-#### Version 5 (Key-Value, バージョン情報無し, 圧縮有り)
+#### Version 4 (Key-Value, バージョン情報無し, 圧縮有り)
 ```Objective-C
+// [Format No.4] Version information and compression
+NSString* sampleText05 = [NSString stringWithFormat:@"V:%d,%@",dataCompressionVerNumber, [compressor encode:sampleText02 baseNumber:baseNumber]];
+NSString *decodedText05 = @"";
+NSLog(@"%@",sampleText05);
+NSLog(@"Format version is ... %d", [compressor getVersionNumber:sampleText05]);
+if([compressor getVersionNumber:sampleText05] == dataCompressionVerNumber){
+    decodedText05 = [compressor decode:sampleText05 baseNumber:baseNumber];
+    NSLog(@"%@", decodedText05);
+}
+```
+### Get sensor data by using SenbayDataManager
+```Objective-C
+SensorDataManager* manager = [[SensorDataManager alloc] init];
+[manager setSensorDataString:decodedText05];
+NSLog(@"%@", [manager getDataByKey:@"TIME"]);
+NSLog(@"%@", [manager getDataByKey:@"ACCX"]);
+NSLog(@"%@", [manager getDataByKey:@"ACCY"]);
+NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 ```
 
 ## Adding the static library to your iOS project
