@@ -54,11 +54,15 @@ NSLog(@"%g", decodedValue02);
 |2|Key-Value|×|○|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|0xxx,1xxx,2xxx,3xxx|
 |3|Key-Value|○|×|V:3,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|×|
 |4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|V:4,0xxx,1xxx,2xxx,3xxx|
-_'x'は、121進数圧縮後の文字列_
+サンプル(圧縮後)の_x_は、121進数圧縮後の文字列
 
 #### Version 1 (CSV, バージョン情報無し, 圧縮無し)
-```Objective-C
-```
+CSV形式の文字列をそのまま、QRコードに変換
+
+|0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|DATE|TIME|ACCX|ACCY|ACCZ|GYROX|GYROY|GYROZ|LNG|LAT|10|11|HEAD|13|14|15|ALT|
+
 
 #### Version 2 (Key-Value, バージョン情報無し, 圧縮無し)
 ```Objective-C
@@ -89,11 +93,13 @@ _'x'は、121進数圧縮後の文字列_
 * SpecialNumber.m
 
 
+
 2. SenbayDataFormatCompressor.hとSensorDataManager.hをインポートして下さい。
 
-    #import "SenbayDataFormatCompressor.h" 
-    #import "SensorDataManager.h"
-
+```Objective-C
+#import "SenbayDataFormatCompressor.h" 
+#import "SensorDataManager.h"
+```
 
 ## Links
 * [Yuuki NISHIYAMA](http://www.ht.sfc.keio.ac.jp/~tetujin "Yuuki NISHIYAMA")
