@@ -36,22 +36,23 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 ```
 
 #### Decode
-        double sampleValue02 = -234.00345;
-        NSLog(@"%g", sampleValue02);
-        NSString* encodedValue02 = [spNum encodeBaseX:baseNumber doubleValue:sampleValue02];
-        NSLog(@"%@",encodedValue02);
-        double decodedValue02 = [spNum decodeDoubleBaseX:baseNumber value:encodedValue02];
-        NSLog(@"%g", decodedValue02);
-
+```Objective-C
+    double sampleValue02 = -234.00345;
+    NSLog(@"%g", sampleValue02);
+    NSString* encodedValue02 = [spNum encodeBaseX:baseNumber doubleValue:sampleValue02];
+    NSLog(@"%@",encodedValue02);
+    double decodedValue02 = [spNum decodeDoubleBaseX:baseNumber value:encodedValue02];
+    NSLog(@"%g", decodedValue02);
+```
 
 ### 5種類のSenbay形式でのEncode, Decode
-|バージョン番号|形式|バージョン情報の有無|圧縮の有無|サンプル|
-|---|---|---|---|---|
-|0|CSV|×|×|1234,0.1,0.01,0.001|
-|1|Key-Value|×|×|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001|
-|2|Key-Value|×|○|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001|
-|3|Key-Value|○|×|V:3,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001|
-|4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001|
+|バージョン番号|形式|バージョン情報の有無|圧縮の有無|サンプル（圧縮前）|サンプル（圧縮後）|
+|---|---|---|---|---|---|
+|0|CSV|×|×|1234,0.1,0.01,-0.1|×|
+|1|Key-Value|×|×|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|×|
+|2|Key-Value|×|○|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|0xxx,1xxx,2xxx,3xxx|
+|3|Key-Value|○|×|V:3,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|×|
+|4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|V:4,0xxx,1xxx,2xxx,3xxx|
 
 
 
