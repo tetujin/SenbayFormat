@@ -26,24 +26,25 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 ### 121進数でのEncode, Decode
 #### Encode
 ```Objective-C
-        long sampleValue01 = 12345;
-        NSLog(@"%ld", sampleValue01);
-        SpecialNumber* spNum = [[SpecialNumber alloc] init];
-        NSString *encodedValue01 = [spNum encodeBaseX:baseNumber longValue:sampleValue01];
-        NSLog(@"%@", encodedValue01);
-        long decodedValue01 = [spNum decodeLongBaseX:baseNumber value:encodedValue01];
-        NSLog(@"%ld", decodedValue01);
+long sampleValue01 = 12345;
+NSLog(@"%ld", sampleValue01);
+SpecialNumber* spNum = [[SpecialNumber alloc] init];
+NSString *encodedValue01 = [spNum encodeBaseX:baseNumber longValue:sampleValue01];
+NSLog(@"%@", encodedValue01);
+long decodedValue01 = [spNum decodeLongBaseX:baseNumber value:encodedValue01];
+NSLog(@"%ld", decodedValue01);
 ```
 
 #### Decode
 ```Objective-C
-    double sampleValue02 = -234.00345;
-    NSLog(@"%g", sampleValue02);
-    NSString* encodedValue02 = [spNum encodeBaseX:baseNumber doubleValue:sampleValue02];
-    NSLog(@"%@",encodedValue02);
-    double decodedValue02 = [spNum decodeDoubleBaseX:baseNumber value:encodedValue02];
-    NSLog(@"%g", decodedValue02);
+double sampleValue02 = -234.00345;
+NSLog(@"%g", sampleValue02);
+NSString* encodedValue02 = [spNum encodeBaseX:baseNumber doubleValue:sampleValue02];
+NSLog(@"%@",encodedValue02);
+double decodedValue02 = [spNum decodeDoubleBaseX:baseNumber value:encodedValue02];
+NSLog(@"%g", decodedValue02);
 ```
+
 
 ### 5種類のSenbay形式でのEncode, Decode
 |バージョン番号|形式|バージョン情報の有無|圧縮の有無|サンプル（圧縮前）|サンプル（圧縮後）|
@@ -53,11 +54,27 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 |2|Key-Value|×|○|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|0xxx,1xxx,2xxx,3xxx|
 |3|Key-Value|○|×|V:3,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|×|
 |4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|V:4,0xxx,1xxx,2xxx,3xxx|
+_'x'は、121進数圧縮後の文字列_
 
+#### Version 1 (CSV, バージョン情報無し, 圧縮無し)
+```Objective-C
+```
 
+#### Version 2 (Key-Value, バージョン情報無し, 圧縮無し)
+```Objective-C
+```
 
-#### CSV形式での保存
+#### Version 3 (Key-Value, バージョン情報無し, 圧縮有り)
+```Objective-C
+```
 
+#### Version 4 (Key-Value, バージョン情報有り, 圧縮無し)
+```Objective-C
+```
+
+#### Version 5 (Key-Value, バージョン情報無し, 圧縮有り)
+```Objective-C
+```
 
 ## Adding the static library to your iOS project
 1. SenbayFormat内の以下のファイルを、プロジェクトに保存して下さい。
