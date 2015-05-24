@@ -18,7 +18,11 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 ## Test code
 `SenbayFormat.xcodeproj`をダブルクリックして、Xcodeでプロジェクトを開いて下さい。
 
+`main.m`には、以下のサンプルコードを記述しています。
 
+* 121進数でのEncode, Decode
+* 5種類のSenbay形式でのEncode, Decode
+* SensorDataManagerを用いたセンサデータの取得
 
 
 ## Adding the static library to your iOS project
