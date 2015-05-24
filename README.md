@@ -100,7 +100,7 @@ if([compressor getVersionNumber:sampleText04] == dataNormalVersionNumber){
 }
 ```
 
-#### Version 4 (Key-Value, バージョン情報無し, 圧縮有り)
+#### Version 4 (Key-Value, バージョン情報有り, 圧縮有り)
 ```Objective-C
 // [Format No.4] Version information and compression
 NSString* sampleText05 = [NSString stringWithFormat:@"V:%d,%@",dataCompressionVerNumber, [compressor encode:sampleText02 baseNumber:baseNumber]];
