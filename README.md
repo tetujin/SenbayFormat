@@ -9,8 +9,6 @@ SenbayFormatには、SnebayFormatでのセンサデータの出力と圧縮、�
 ### Version 1.0
 _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しました。本メソッドでは、Senbay形式の文字列を引数に与えることで、形式のバージョン(0-4)を返します。_
 
-## Coding
-
 
 ## License
 
@@ -25,6 +23,25 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 * SensorDataManagerを用いたセンサデータの取得
 
 
+### 1.121進数でのEncode, Decode
+#### Encode
+        long sampleValue01 = 12345;
+        NSLog(@"%ld", sampleValue01);
+        SpecialNumber* spNum = [[SpecialNumber alloc] init];
+        NSString *encodedValue01 = [spNum encodeBaseX:baseNumber longValue:sampleValue01];
+        NSLog(@"%@", encodedValue01);
+        long decodedValue01 = [spNum decodeLongBaseX:baseNumber value:encodedValue01];
+        NSLog(@"%ld", decodedValue01);
+
+#### Decode
+        double sampleValue02 = -234.00345;
+        NSLog(@"%g", sampleValue02);
+        NSString* encodedValue02 = [spNum encodeBaseX:baseNumber doubleValue:sampleValue02];
+        NSLog(@"%@",encodedValue02);
+        double decodedValue02 = [spNum decodeDoubleBaseX:baseNumber value:encodedValue02];
+        NSLog(@"%g", decodedValue02);
+
+
 ## Adding the static library to your iOS project
 1. SenbayFormat内の以下のファイルを、プロジェクトに保存して下さい。
 
@@ -37,9 +54,11 @@ _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しまし�
 * SpecialNumber.h
 * SpecialNumber.m
 
-2. SenbayDataFormatCompressor.hをインポートして下さい。
+
+2. SenbayDataFormatCompressor.hとSensorDataManager.hをインポートして下さい。
 
 `#import "SenbayDataFormatCompressor.h"` 
+`#import "SensorDataManager.h"`
 
 
 ## Links
