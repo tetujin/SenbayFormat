@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		16182A101B11A34000F3B293 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16182A0F1B11A34000F3B293 /* main.m */; };
+		16182A1E1B11A43900F3B293 /* ReservedKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 16182A171B11A43900F3B293 /* ReservedKeys.m */; };
+		16182A1F1B11A43900F3B293 /* SenbayDataFormatCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 16182A191B11A43900F3B293 /* SenbayDataFormatCompressor.m */; };
+		16182A201B11A43900F3B293 /* SensorDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16182A1B1B11A43900F3B293 /* SensorDataManager.m */; };
+		16182A211B11A43900F3B293 /* SpecialNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 16182A1D1B11A43900F3B293 /* SpecialNumber.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		16182A0C1B11A34000F3B293 /* SenbayFormat */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SenbayFormat; sourceTree = BUILT_PRODUCTS_DIR; };
 		16182A0F1B11A34000F3B293 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		16182A161B11A43900F3B293 /* ReservedKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservedKeys.h; sourceTree = "<group>"; };
+		16182A171B11A43900F3B293 /* ReservedKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservedKeys.m; sourceTree = "<group>"; };
+		16182A181B11A43900F3B293 /* SenbayDataFormatCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SenbayDataFormatCompressor.h; sourceTree = "<group>"; };
+		16182A191B11A43900F3B293 /* SenbayDataFormatCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SenbayDataFormatCompressor.m; sourceTree = "<group>"; };
+		16182A1A1B11A43900F3B293 /* SensorDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SensorDataManager.h; sourceTree = "<group>"; };
+		16182A1B1B11A43900F3B293 /* SensorDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SensorDataManager.m; sourceTree = "<group>"; };
+		16182A1C1B11A43900F3B293 /* SpecialNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialNumber.h; sourceTree = "<group>"; };
+		16182A1D1B11A43900F3B293 /* SpecialNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialNumber.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				16182A0F1B11A34000F3B293 /* main.m */,
+				16182A161B11A43900F3B293 /* ReservedKeys.h */,
+				16182A171B11A43900F3B293 /* ReservedKeys.m */,
+				16182A181B11A43900F3B293 /* SenbayDataFormatCompressor.h */,
+				16182A191B11A43900F3B293 /* SenbayDataFormatCompressor.m */,
+				16182A1A1B11A43900F3B293 /* SensorDataManager.h */,
+				16182A1B1B11A43900F3B293 /* SensorDataManager.m */,
+				16182A1C1B11A43900F3B293 /* SpecialNumber.h */,
+				16182A1D1B11A43900F3B293 /* SpecialNumber.m */,
 			);
 			path = SenbayFormat;
 			sourceTree = "<group>";
@@ -119,6 +139,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16182A101B11A34000F3B293 /* main.m in Sources */,
+				16182A201B11A43900F3B293 /* SensorDataManager.m in Sources */,
+				16182A1E1B11A43900F3B293 /* ReservedKeys.m in Sources */,
+				16182A1F1B11A43900F3B293 /* SenbayDataFormatCompressor.m in Sources */,
+				16182A211B11A43900F3B293 /* SpecialNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +259,7 @@
 				16182A151B11A34000F3B293 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
