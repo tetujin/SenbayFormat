@@ -45,6 +45,7 @@ NSLog(@"%g", decodedValue02);
 
 ### 5種類のSenbay形式でのEncode, Decode
 Senbayには以下の0-4の5種類のバージョンがあり、__Version 4__ の使用を推奨する。
+
 |バージョン番号|形式|バージョン情報の有無|圧縮の有無|サンプル（圧縮前）|サンプル（圧縮後）|
 |---|---|---|---|---|---|
 |0|CSV|×|×|1234,0.1,0.01,-0.1|×|
@@ -54,27 +55,28 @@ Senbayには以下の0-4の5種類のバージョンがあり、__Version 4__ �
 |4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|V:4,0xxx,1xxx,2xxx,3xxx|
 * サンプル(圧縮後)の_x_は、121進数圧縮後の文字列
 
-__定義済みのKEY__
+__定義済みKEY__
+
+16種類がKEYが定義済みKEYとして定義されている。定義済みKEYを用いることで、データの圧縮率が向上する。
+
 |予約語|圧縮後|意味|
-|TIME|0||
-|TIME|0||
-|TIME|0||
-    [reservedKeys setKeyValue:@"TIME" value:@"0"];
-    [reservedKeys setKeyValue:@"LONG" value:@"1"];
-    [reservedKeys setKeyValue:@"LATI" value:@"2"];
-    [reservedKeys setKeyValue:@"ALTI" value:@"3"];
-    [reservedKeys setKeyValue:@"ACCX" value:@"4"];
-    [reservedKeys setKeyValue:@"ACCY" value:@"5"];
-    [reservedKeys setKeyValue:@"ACCZ" value:@"6"];
-    [reservedKeys setKeyValue:@"YAW"  value:@"7"];
-    [reservedKeys setKeyValue:@"ROLL" value:@"8"];
-    [reservedKeys setKeyValue:@"PITC" value:@"9"];
-    [reservedKeys setKeyValue:@"HEAD" value:@"A"];
-    [reservedKeys setKeyValue:@"SPEE" value:@"B"];
-    [reservedKeys setKeyValue:@"BRIG" value:@"C"];
-    [reservedKeys setKeyValue:@"AIRP" value:@"D"];
-    [reservedKeys setKeyValue:@"HTBT" value:@"E"];
-    [reservedKeys setKeyValue:@"V" value:@"V"];
+|TIME|1|Unixtime|
+|LONG|2|Latitude|
+|LATI|3|Longitude|
+|ALTI|4|Altitude|
+|ACCX|5|Accelerometer-X|
+|ACCY|6|Accelerometer-Y|
+|ACCZ|7|Accelerometer-Z|
+|YAW|8|Gryo Scope - Yaw|
+|ROLL|9|Gryo Scope - Roll|
+|PITC|A|Gryo Scope - Pitc|
+|HEAD|B|Heading|
+|SPEE|C|Speed|
+|BRIG|D|Brigthness|
+|AIRP|E|Air pressure|
+|HTBT|F|heartbeat|
+|V|V|Version|
+
 
 #### Version 0 (CSV, バージョン情報無し, 圧縮無し)
 CSV形式の文字列をそのまま、QRコードに変換する。
