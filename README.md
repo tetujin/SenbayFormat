@@ -149,6 +149,7 @@ NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 * [Takuro YONEZAWA](http://www.ht.sfc.keio.ac.jp/~takuro "Takuro YONEZAWA")
 * [Tokuda Laboratory](http://www.ht.sfc.keio.ac.jp "Tokuda Laboratory")
 * [Senbay Offical Webpage](http://www.senbay.info "Senbay")
+* [Senbay Channel](https://www.youtube.com/channel/UCbnQUEc3KpE1M9auxwMh2dA?feature=iv&src_vid=zNybcucFGpI&annotation_id=annotation_602936465 "Senbay Channel")
 * [Senbay App Store](https://itunes.apple.com/jp/app/id975034760 "App Store")
 * [Senbay Reader App Store](https://itunes.apple.com/jp/app/senbay-reader-senbayde-cuo/id975073024?mt=8 "App Store")
 
