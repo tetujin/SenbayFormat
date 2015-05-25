@@ -2,27 +2,26 @@
 ![Senbay Icon](https://yt3.ggpht.com/-hQFgscIKccg/AAAAAAAAAAI/AAAAAAAAAAA/MANEDCbBn7M/s100-c-k-no/photo.jpg "Senbay Icon")
 
 ## Overview
-SenbayFormatライブラリは、[Senbay](http://www.senbay.info "Senbay")で使用するセンサデータフォーマットを操作する為のライブラリです。
-SenbayFormatライブラリには、SnebayFormatでのセンサデータの入出力と圧縮、解凍機能が備わっています。
-データ圧縮には、121進数を用いた圧縮を用いています。
-
+SenbayFormatライブラリは、[Senbay](http://www.senbay.info "Senbay")で使用するセンサデータ形式を操作する為のライブラリである。
+ライブラリには、Snebay Format でのセンサデータの圧縮、解凍機能が備わっている。
+サンプルコードでは、「121進数圧縮・解凍」「SenbayFormatでのセンサデータの圧縮」「SensorDataManagerを用いたセンサデータ管理」を説明する。
 
 ## What's new?
 ### Version 1.0
 * _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しました。本メソッドでは、Senbay形式の文字列を引数に与えることで、形式のバージョン(0-4)を返します。_
 
 
-## Test code
+## Sample Code
 `SenbayFormat.xcodeproj`をダブルクリックして、Xcodeでプロジェクトを開く。
 
-`main.m`には、以下のサンプルコードが記述されている。
+`main.m`にサンプルコードが記述されている。
 
 * 121進数でのEncode, Decode
 * 5種類のSenbay形式でのEncode, Decode
 * SensorDataManagerを用いたセンサデータの取得
 
 
-### 121進数でのEncode, Decode
+### 121進数での圧縮と解凍
 ```Objective-C
 // Case of long value 
 long sampleValue01 = 12345;
@@ -43,7 +42,7 @@ NSLog(@"%g", decodedValue02);
 ```
 
 
-### 5種類のSenbay形式でのEncode, Decode
+### SenbayFormatの定義と圧縮・解凍
 Senbayには以下の0-4の5種類のバージョンがあり、__Version 4__ の使用を推奨する。
 
 |バージョン番号|形式|バージョン情報の有無|圧縮の有無|サンプル（圧縮前）|サンプル（圧縮後）|
