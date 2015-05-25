@@ -1,9 +1,11 @@
 # SenbayFormat
+![Senbay Icon](https://yt3.ggpht.com/-hQFgscIKccg/AAAAAAAAAAI/AAAAAAAAAAA/MANEDCbBn7M/s100-c-k-no/photo.jpg "Senbay Icon")
 
 ## Overview
 SenbayFormatは、[Senbay](http://www.senbay.info "Senbay")で撮影したQRコードに保存されたセンサデータを管理する為のライブラリです。
 SenbayFormatには、SnebayFormatでのセンサデータの出力と圧縮、解凍、取得機能が備わっています。
 データ圧縮には、121進数を用いた圧縮を用いています。
+
 
 ## What's new?
 ### Version 1.0
