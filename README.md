@@ -157,15 +157,14 @@ NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 ## Adding the static library to your iOS project
 1. SenbayFormat内の以下のファイルを、プロジェクトに保存。
 
-* ReservedKeys.h
-* ReservedKeys.m
-* SenbayDataFormatCompressor.h
-* SenbayDataFormatCompressor.m
-* SensorDataManager.h
-* SensorDataManager.m
-* SpecialNumber.h
-* SpecialNumber.m
-
+  * ReservedKeys.h
+  * ReservedKeys.m
+  * SenbayDataFormatCompressor.h
+  * SenbayDataFormatCompressor.m
+  * SensorDataManager.h
+  * SensorDataManager.m
+  * SpecialNumber.h
+  * SpecialNumber.m
 
 2. SenbayDataFormatCompressor.hとSensorDataManager.hをインポート。
 
