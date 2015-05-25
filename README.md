@@ -15,7 +15,7 @@ SenbayFormatライブラリには、SnebayFormatでのセンサデータの入�
 ## Test code
 `SenbayFormat.xcodeproj`をダブルクリックして、Xcodeでプロジェクトを開く。
 
-`main.m`には、以下のサンプルコードを記述されている。
+`main.m`には、以下のサンプルコードが記述されている。
 
 * 121進数でのEncode, Decode
 * 5種類のSenbay形式でのEncode, Decode
