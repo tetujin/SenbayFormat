@@ -2,18 +2,14 @@
 ![Senbay Icon](https://yt3.ggpht.com/-hQFgscIKccg/AAAAAAAAAAI/AAAAAAAAAAA/MANEDCbBn7M/s100-c-k-no/photo.jpg "Senbay Icon")
 
 ## Overview
-SenbayFormatは、[Senbay](http://www.senbay.info "Senbay")で撮影したQRコードに保存されたセンサデータを管理する為のライブラリです。
+SenbayFormatは、[Senbay](http://www.senbay.info "Senbay")で使用するセンサデータのフォーマットを操作する為のライブラリです。
 SenbayFormatには、SnebayFormatでのセンサデータの出力と圧縮、解凍、取得機能が備わっています。
 データ圧縮には、121進数を用いた圧縮を用いています。
 
 
 ## What's new?
 ### Version 1.0
-_SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しました。本メソッドでは、Senbay形式の文字列を引数に与えることで、形式のバージョン(0-4)を返します。_
-
-
-
-
+* _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しました。本メソッドでは、Senbay形式の文字列を引数に与えることで、形式のバージョン(0-4)を返します。_
 
 
 ## Test code
@@ -55,7 +51,9 @@ NSLog(@"%g", decodedValue02);
 |2|Key-Value|×|○|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|0xxx,1xxx,2xxx,3xxx|
 |3|Key-Value|○|×|V:3,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|×|
 |4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|V:4,0xxx,1xxx,2xxx,3xxx|
-サンプル(圧縮後)の_x_は、121進数圧縮後の文字列
+
+* サンプル(圧縮後)の_x_は、121進数圧縮後の文字列
+* __Version 4__ の使用を推奨。Senbay 2.0 では、Version 4(データ圧縮有り) と Version 3(データ圧縮無し)を使用。 
 
 #### Version 0 (CSV, バージョン情報無し, 圧縮無し)
 CSV形式の文字列をそのまま、QRコードに変換する。
@@ -65,8 +63,6 @@ CSV形式の文字列をそのまま、QRコードに変換する。
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |unixtime|timestamp|AccX|AccY|AccZ|GyroX|GyroY|GyroZ|Lng|Lat|Orientation|proximity|heading|battery|h-accuracy|v-accuracy|altitude|HTBT|
 |1.40997908972E11|2014/09/06 13:51:29:714|0.54921|-0.183899|-0.595016|0.19394|0.025706|-0.254604|140.188107|36.317965|0.0|1.0|303.031494|-1.0|10.0|8.0|347.317627|141|
-
-unixtime,timestamp,AccX,AccY,AccZ,GyroX,GyroY,GyroZ,Lng,Lat,Orientation,proximity,heading,battery,h-accuracy,v-accuracy,altitude,speed,course,distance,brightness
 
 `[Sample] NSString* sampleCSVDate = @"1.40997908972E11,2014/09/06 13:51:29:714,0.54921,-0.183899,-0.595016,0.19394,0.025706,-0.254604,140.188107,36.317965,0.0,1.0,303.031494,-1.0,10.0,8.0,347.317627,141";`
 
@@ -93,6 +89,10 @@ NSLog(@"%@", sampleText03);
 NSLog(@"Format version is ... %d", [compressor getVersionNumber:sampleText03]);
 ```
 
+```Objective-C
+NSString* sample = @"TIME:1425941221.812044,LONG:139.635849,LATI:35.439283,ALTI:-0.109436,SPEE:0.2,ACCX:-0.140427,ACCY:-0.145172,ACCZ:-0.754669,YAW:3.269728,ROLL:-0.698060,PITC:1.455648,HEAD:50.542423,BRIG:0.360247,BATT:-1,AIRP:0,TEMP:8.149988,WEAT:'Fog',HUMI:100,WIND:3.1";
+```
+
 #### Version 3 (Key-Value, バージョン情報有り, 圧縮無し)
 ```Objective-C
 NSString* sampleText04 = [NSString stringWithFormat:@"V:%d,%@", dataNormalVersionNumber, sampleText02];
@@ -115,6 +115,11 @@ if([compressor getVersionNumber:sampleText05] == dataCompressionVerNumber){
     NSLog(@"%@", decodedText05);
 }
 ```
+
+```Objective-C
+NSString* sample = @"TIME:1427521914.127140,LONG:139.495503,LATI:35.306662,ALTI:11.211637,SPEE:5.800000,ACCX:-1.454250,ACCY:-0.114590,ACCZ:-0.104630,YAW:0.369279,ROLL:-0.193332,PITC:0.238990,HEAD:11.522325,BRIG:0.973568,BATT:0.340000,AIRP:101.484795,TEMP:18.559991,WEAT:'Clear',HUMI:15,WIND:1.540000,HTBT:124";
+```
+
 ### Get sensor data by using SenbayDataManager
 ```Objective-C
 SensorDataManager* manager = [[SensorDataManager alloc] init];
