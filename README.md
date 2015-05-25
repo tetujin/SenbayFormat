@@ -80,8 +80,6 @@ __定義済みKEY__
 
 
 #### Version 0 (CSV, バージョン情報無し, 圧縮無し)
-CSV形式の文字列をそのまま、QRコードに変換する。
-データの順番は、以下の表の通りにする。
 
 |0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -157,7 +155,7 @@ NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 ```
 
 ## Adding the static library to your iOS project
-1. SenbayFormat内の以下のファイルを、プロジェクトに保存して下さい。
+1. SenbayFormat内の以下のファイルを、プロジェクトに保存。
 
 * ReservedKeys.h
 * ReservedKeys.m
@@ -169,13 +167,20 @@ NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 * SpecialNumber.m
 
 
-
-2. SenbayDataFormatCompressor.hとSensorDataManager.hをインポートして下さい。
+2. SenbayDataFormatCompressor.hとSensorDataManager.hをインポート。
 
 ```Objective-C
 #import "SenbayDataFormatCompressor.h" 
 #import "SensorDataManager.h"
 ```
+
+3. SenbayDataFormatCompressorとSensorDataManagerを初期化
+
+```Objective-C
+SenbayDataFormatCompressor* compressor = [[SenbayDataFormatCompressor alloc] init];
+SensorDataManager* manager = [[SensorDataManager alloc] init];
+```
+
 
 ## Links
 * [Yuuki NISHIYAMA](http://www.ht.sfc.keio.ac.jp/~tetujin "Yuuki NISHIYAMA")
