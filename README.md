@@ -60,6 +60,7 @@ __定義済みKEY__
 16種類がKEYが定義済みKEYとして定義されている。定義済みKEYを用いることで、データの圧縮率が向上する。
 
 |予約語|圧縮後|意味|
+|---|---|---|
 |TIME|1|Unixtime|
 |LONG|2|Latitude|
 |LATI|3|Longitude|
