@@ -168,17 +168,17 @@ NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 
 2. SenbayDataFormatCompressor.hとSensorDataManager.hをインポート。
 
-```Objective-C
-#import "SenbayDataFormatCompressor.h" 
-#import "SensorDataManager.h"
-```
+  ```Objective-C
+  #import "SenbayDataFormatCompressor.h" 
+  #import "SensorDataManager.h"
+  ```
 
 3. SenbayDataFormatCompressorとSensorDataManagerを初期化
 
-```Objective-C
-SenbayDataFormatCompressor* compressor = [[SenbayDataFormatCompressor alloc] init];
-SensorDataManager* manager = [[SensorDataManager alloc] init];
-```
+  ```Objective-C
+  SenbayDataFormatCompressor* compressor = [[SenbayDataFormatCompressor alloc] init];
+  SensorDataManager* manager = [[SensorDataManager alloc] init];
+  ```
 
 
 ## Links
