@@ -10,8 +10,7 @@ In the sample codes, we will show you following points.
 
 ## What's new?
 ### Version 1.0
-* _SenbayDataFormatCompressorに、getVersionNumberメソッドを追加しました。本メソッドでは、Senbay形式の文字列を引数に与えることで、形式のバージョン(0-4)を返します。_
-
+* _We add a new method of getVersionNumber to SenbayDataFormatCompression. This method return a format version of SenbayFormat (Version 0 ~ 4) from a SenbayFormat text. _
 
 ## Sample Code
 Please open a Project on Xcode through double clicking `SenbayFormat.xcodeproj`.
@@ -47,7 +46,7 @@ NSLog(@"%g", decodedValue02);
 ### Definition of SenbayFormat
 Currenty, we have 5 version of SenbayFormat (Version 0 ~ 4) . We recommend to use __Version 4__.
 
-|Version Number|Format|Version Information Existence| Compression Existence | Smaple Data (Befor Compression)| Sample (After  cCompression)|
+|Version Number|Format|Version Information Existence| Compression Existence | Smaple Data (Befor Compression)| Sample (After   Compression)|
 |---|---|---|---|---|---|
 |0|CSV|×|×|1234,0.1,0.01,-0.1|×|
 |1|Key-Value|×|×|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|×|
@@ -56,11 +55,11 @@ Currenty, we have 5 version of SenbayFormat (Version 0 ~ 4) . We recommend to us
 |4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|V:4,0xxx,1xxx,2xxx,3xxx|
 * サンプル(圧縮後)の_x_は、121進数圧縮後の文字列
 
-__定義済みKEY__
+__Definition's Keys__
 
 16種類がKEYが定義済みKEYとして定義されている。定義済みKEYを用いることで、データの圧縮率が向上する。
 
-|予約語|圧縮後|意味|
+|Reserved Word|After Compression|Sense|
 |---|---|---|
 |TIME|1|Unixtime|
 |LONG|2|Latitude|
@@ -192,13 +191,26 @@ NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 * [Senbay Reader App Store](https://itunes.apple.com/jp/app/senbay-reader-senbayde-cuo/id975073024?mt=8 "App Store")
 
 ## License
-The MIT License
+The MIT License (MIT)
+
 Copyright (c) 2015 Yuuki NISHIYAMA
 
-以下に定める条件に従い、本ソフトウェアおよび関連文書のファイル（以下「ソフトウェア」）の複製を取得するすべての人に対し、ソフトウェアを無制限に扱うことを無償で許可します。これには、ソフトウェアの複製を使用、複写、変更、結合、掲載、頒布、サブライセンス、および/または販売する権利、およびソフトウェアを提供する相手に同じことを許可する権利も無制限に含まれます。
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-上記の著作権表示および本許諾表示を、ソフトウェアのすべての複製または重要な部分に記載するものとします。
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
 
-ソフトウェアは「現状のまま」で、明示であるか暗黙であるかを問わず、何らの保証もなく提供されます。ここでいう保証とは、商品性、特定の目的への適合性、および権利非侵害についての保証も含みますが、それに限定されるものではありません。 作者または著作権者は、契約行為、不法行為、またはそれ以外であろうと、ソフトウェアに起因または関連し、あるいはソフトウェアの使用またはその他の扱いによって生じる一切の請求、損害、その他の義務について何らの責任も負わないものとします。
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
 
 ## Reference
