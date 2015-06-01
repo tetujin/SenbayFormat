@@ -2,9 +2,11 @@
 ![Senbay Icon](https://yt3.ggpht.com/-hQFgscIKccg/AAAAAAAAAAI/AAAAAAAAAAA/MANEDCbBn7M/s100-c-k-no/photo.jpg "Senbay Icon")
 
 ## Overview
-SenbayFormatライブラリは、[Senbay](http://www.senbay.info "Senbay")で使用するセンサデータ形式を操作する為のライブラリである。
-ライブラリには、Snebay Format でのセンサデータの圧縮、解凍機能が備わっている。
-サンプルコードでは、「121進数圧縮・解凍」「SenbayFormatでのセンサデータの圧縮」「SensorDataManagerを用いたセンサデータ管理」を説明する。
+SenbayFormat library provides control method of sensor data format which is used in [Senbay](http://www.senbay.info "Senbay").
+In the sample codes, we will show you following points.
+- Compression and uncompression method for sensor data by using Base-121 
+- Sensor data compression/uncompression method by SenbayFormat
+- Sensor data manegement using SensorDataManager
 
 ## What's new?
 ### Version 1.0
@@ -12,16 +14,16 @@ SenbayFormatライブラリは、[Senbay](http://www.senbay.info "Senbay")で使
 
 
 ## Sample Code
-`SenbayFormat.xcodeproj`をダブルクリックして、Xcodeでプロジェクトを開く。
+Please open a Project on Xcode through double clicking `SenbayFormat.xcodeproj`.
 
-`main.m`にサンプルコードが記述されている。
+Smaple codes is written on the `main.m` file.
 
-* 121進数でのEncode, Decode
-* 5種類のSenbay形式でのEncode, Decode
-* SensorDataManagerを用いたセンサデータの取得
+* Compression and uncompression method for sensor data by using Base-121 
+* Sensor data compression/uncompression method by SenbayFormat
+* Sensor data manegement using SensorDataManager
 
 
-### 121進数での圧縮と解凍
+### Compression and uncompression method for sensor data by using Base-121 
 ```Objective-C
 // Case of long value 
 long sampleValue01 = 12345;
@@ -42,10 +44,10 @@ NSLog(@"%g", decodedValue02);
 ```
 
 
-### SenbayFormatの定義と圧縮・解凍
-Senbayには以下の0-4の5種類のバージョンがあり、__Version 4__ の使用を推奨する。
+### Definition of SenbayFormat
+Currenty, we have 5 version of SenbayFormat (Version 0 ~ 4) . We recommend to use __Version 4__.
 
-|バージョン番号|形式|バージョン情報の有無|圧縮の有無|サンプル（圧縮前）|サンプル（圧縮後）|
+|Version Number|Format|Version Information Existence| Compression Existence | Smaple Data (Befor Compression)| Sample (After  cCompression)|
 |---|---|---|---|---|---|
 |0|CSV|×|×|1234,0.1,0.01,-0.1|×|
 |1|Key-Value|×|×|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|×|
