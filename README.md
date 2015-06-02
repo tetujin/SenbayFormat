@@ -53,11 +53,11 @@ Currenty, we have 5 version of SenbayFormat (Version 0 ~ 4) . We recommend to us
 |2|Key-Value|×|○|TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|0xxx,1xxx,2xxx,3xxx|
 |3|Key-Value|○|×|V:3,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|×|
 |4|Key-Value|○|○|V:4,TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:-0.1|V:4,0xxx,1xxx,2xxx,3xxx|
-* サンプル(圧縮後)の_x_は、121進数圧縮後の文字列
+* _xxx_ means characters of compressed text which is compressed by using 121 base-number compression algorithm. 
 
 __Definition's Keys__
 
-16種類がKEYが定義済みKEYとして定義されている。定義済みKEYを用いることで、データの圧縮率が向上する。
+16 type of KEYs are defined as the definition KEYs.
 
 |Reserved Word|After Compression|Sense|
 |---|---|---|
@@ -79,7 +79,7 @@ __Definition's Keys__
 |V|V|Version|
 
 
-#### Version 0 (CSV, バージョン情報無し, 圧縮無し)
+#### Version 0 (CSV, No version information, No compression)
 
 |0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -91,8 +91,8 @@ __Definition's Keys__
 ```
 
 
-#### Version 1 (Key-Value, バージョン情報無し, 圧縮無し)
-圧縮の必要は無いため、データをそのまま扱う。また、TIME(時間)のKEYを文字列の一番はじめにしなればならない。
+#### Version 1 (Key-Value, No version information, No compression)
+You have to set the TIME at head of a text.
 ```Objective-C
 NSString* sampleText02 = @"TIME:1234,ACCX:0.1,ACCY:0.01,ACCZ:0.001";
 NSLog(@"%@", sampleText02);
@@ -103,7 +103,7 @@ SensorDataManager* manager = [[SensorDataManager alloc] init];
 NSLog(@"%@", [manager getDataByKey:@"TIME"]);
 ```
 
-#### Version 2 (Key-Value, バージョン情報無し, 圧縮有り)
+#### Version 2 (Key-Value, No version information, Compression)
 ```Objective-C
 // [Format No.2] No version information and compression
 SenbayDataFormatCompressor* compressor = [[SenbayDataFormatCompressor alloc] init];
@@ -117,7 +117,7 @@ NSLog(@"Format version is ... %d", [compressor getVersionNumber:sampleText03]);
 NSString* sample = @"TIME:1425941221.812044,LONG:139.635849,LATI:35.439283,ALTI:-0.109436,SPEE:0.2,ACCX:-0.140427,ACCY:-0.145172,ACCZ:-0.754669,YAW:3.269728,ROLL:-0.698060,PITC:1.455648,HEAD:50.542423,BRIG:0.360247,BATT:-1,AIRP:0,TEMP:8.149988,WEAT:'Fog',HUMI:100,WIND:3.1";
 ```
 
-#### Version 3 (Key-Value, バージョン情報有り, 圧縮無し)
+#### Version 3 (Key-Value, No version information, No compression)
 ```Objective-C
 NSString* sampleText04 = [NSString stringWithFormat:@"V:%d,%@", dataNormalVersionNumber, sampleText02];
 NSLog(@"%@",sampleText04);
@@ -127,7 +127,7 @@ if([compressor getVersionNumber:sampleText04] == dataNormalVersionNumber){
 }
 ```
 
-#### Version 4 (Key-Value, バージョン情報有り, 圧縮有り)
+#### Version 4 (Key-Value, Version information, Compression)
 ```Objective-C
 // [Format No.4] Version information and compression
 NSString* sampleText05 = [NSString stringWithFormat:@"V:%d,%@",dataCompressionVerNumber, [compressor encode:sampleText02 baseNumber:baseNumber]];
@@ -154,8 +154,8 @@ NSLog(@"%@", [manager getDataByKey:@"ACCY"]);
 NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 ```
 
-## Adding the static library to your iOS project
-1. SenbayFormat内の以下のファイルを、プロジェクトに保存。
+## Adding the library to your iOS project
+1. First, you should copy following files from SenbayFormat.
 
   * ReservedKeys.h
   * ReservedKeys.m
@@ -166,14 +166,14 @@ NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
   * SpecialNumber.h
   * SpecialNumber.m
 
-2. SenbayDataFormatCompressor.hとSensorDataManager.hをインポート。
+2. Second, please import ``SenbayDataFormatCompressor.h`` and ``SensorDataManager.h`` at your target file.
 
   ```Objective-C
   #import "SenbayDataFormatCompressor.h" 
   #import "SensorDataManager.h"
   ```
 
-3. SenbayDataFormatCompressorとSensorDataManagerを初期化
+3. Finally, you will initialize SenbayDataFormatCompressor and SensorDataManager
 
   ```Objective-C
   SenbayDataFormatCompressor* compressor = [[SenbayDataFormatCompressor alloc] init];
