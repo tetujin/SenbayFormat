@@ -25,7 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-					SenbayFormat library provides control method of sensor data format which is used in Senbay.
+					SenbayFormat library provides control method of sensor data format which is used in Senbay. This library is open source for developers of Senbay platform. Moreover, this library includes three functions. 
+					1) Compression and uncompression method for sensor data by using Base-121
+					2) Sensor data compression/uncompression method by SenbayFormat
+					3) Sensor data manegement using SensorDataManager
                    DESC
 
   s.homepage     = "https://github.com/tetujin/SenbayFormat"
