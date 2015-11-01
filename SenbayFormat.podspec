@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "SenbayFormat"
   s.version      = "0.0.2"
+<<<<<<< HEAD
   s.summary      = "SenbayFormat library provides control method of sensor data format which is used in Senbay. "
 
   # This description is used to generate tags and improve search results.
@@ -29,6 +30,20 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/tetujin/SenbayFormat"
   # s.screenshots  = "https://camo.githubusercontent.com/a36a0e30dbdb2f26a8af922d314ad68e926dc78d/68747470733a2f2f7974332e67677068742e636f6d2f2d685146677363494b6363672f41414141414141414141492f41414141414141414141412f4d414e45444362426e374d2f733130302d632d6b2d6e6f2f70686f746f2e6a7067"
+=======
+  s.summary      = "A short description of SenbayFormat."
+
+  s.description  = <<-DESC
+                   A longer description of SenbayFormat in Markdown format.
+
+                   * Think: Why did you write this? What is the focus? What does it do?
+                   * CocoaPods will be using this to generate tags, and improve search results.
+                   * Try to keep it short, snappy and to the point.
+                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   DESC
+
+  s.homepage     = "https://github.com/tetujin/SenbayFormat"
+>>>>>>> 9e874b8555033e7b049c99c24138f21b9296ad72
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -39,9 +54,14 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
+<<<<<<< HEAD
   #s.license      = "MIT (example)"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
   s.license      = { :type => "MIT", :file => "LICENSE" }
+=======
+  s.license      = "MIT"
+  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+>>>>>>> 9e874b8555033e7b049c99c24138f21b9296ad72
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -54,11 +74,18 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
+<<<<<<< HEAD
   s.author             = { "Yuuki NISHIYAMA" => "tetujin@ht.sfc.keio.ac.jp" }
   # Or just: s.author    = "tetujin"
   # s.authors            = { "tetujin" => "tetujin@ht.sfc.keio.ac.jp" }
   # s.social_media_url   = "http://twitter.com/tetujin"
   s.social_media_url   = "https://twitter.com/tetujin23"
+=======
+  s.author             = { "tetujin" => "tetujin@ht.sfc.keio.ac.jp" }
+  # Or just: s.author    = "tetujin"
+  # s.authors            = { "tetujin" => "tetujin@ht.sfc.keio.ac.jp" }
+  # s.social_media_url   = "http://twitter.com/tetujin"
+>>>>>>> 9e874b8555033e7b049c99c24138f21b9296ad72
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -66,12 +93,20 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
+<<<<<<< HEAD
+=======
+  s.platform     = :osx
+>>>>>>> 9e874b8555033e7b049c99c24138f21b9296ad72
   # s.platform     = :ios
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
+<<<<<<< HEAD
   # s.osx.deployment_target = "10.7"
+=======
+  s.osx.deployment_target = "10.7"
+>>>>>>> 9e874b8555033e7b049c99c24138f21b9296ad72
   # s.watchos.deployment_target = "2.0"
 
 
@@ -81,7 +116,11 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
+<<<<<<< HEAD
   s.source       = { :git => "https://github.com/tetujin/SenbayFormat", :tag => "0.0.1" }
+=======
+  s.source       = { :git => "https://github.com/tetujin/SenbayFormat.git", :tag => "0.0.1" }
+>>>>>>> 9e874b8555033e7b049c99c24138f21b9296ad72
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -92,9 +131,15 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
+<<<<<<< HEAD
   #s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.source_files  = "SenbayFormat/*"
   #s.exclude_files = "Classes/Exclude"
+=======
+  #s.source_files  = "Classes", "Classes/**/*.{h,m}", "SenbayFormat/*.{h,m}"
+  s.source_files  = "SenbayFormat/*.{h,m}"
+  s.exclude_files = "Classes/Exclude"
+>>>>>>> 9e874b8555033e7b049c99c24138f21b9296ad72
 
   # s.public_header_files = "Classes/**/*.h"
 
