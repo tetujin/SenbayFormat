@@ -10,7 +10,8 @@ In the sample codes, we will show you following points.
 
 ## What's new?
 ### Version 1.0
-* _We add a new method of getVersionNumber to SenbayDataFormatCompression. This method return a format version of SenbayFormat (Version 0 ~ 4) from a SenbayFormat text. _
+* _We uploaded SenbayFormat library to CocoaPods. You can install our library via [CocoaPods](https://guides.cocoapods.org/)_
+* _We add a new method of getVersionNumber to SenbayDataFormatCompression. This method return a format version of SenbayFormat (Version 0 ~ 4) from a SenbayFormat text._
 
 
 
@@ -18,9 +19,11 @@ In the sample codes, we will show you following points.
 ### CocoaPods
 1. Install [CocoaPod](https://guides.cocoapods.org/using/getting-started.html#toc_3) on your computer
 2. Create a [Podfile](https://guides.cocoapods.org/using/using-cocoapods.html), and add your dependencies:
-  ```
-    pod 'SenbayFormat'
-  ```
+
+```
+  pod 'SenbayFormat'
+```
+
 3. Run `$ Pod install` in your project directory.
 4. Open `App.xcworkspace` and build.
 
