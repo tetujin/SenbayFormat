@@ -21,8 +21,9 @@ In the sample codes, we will show you following points.
 ```
   pod 'SenbayFormat'
 ```
-3. Run $ Pod install in your project directory.
-4. Open App.xcworkspace and build.
+3. Run `$ Pod install` in your project directory.
+4. Open `App.xcworkspace` and build.
+
 
 ### Directly
 1. First, you should copy following files from SenbayFormat.
