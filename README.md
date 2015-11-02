@@ -24,7 +24,7 @@ In the sample codes, we will show you following points.
   pod 'SenbayFormat'
 ```
 
-- Run `$ Pod install` in your project directory.
+- Run `$ pod install` in your project directory.
 - Open `App.xcworkspace` and build.
 
 
