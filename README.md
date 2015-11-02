@@ -12,6 +12,47 @@ In the sample codes, we will show you following points.
 ### Version 1.0
 * _We add a new method of getVersionNumber to SenbayDataFormatCompression. This method return a format version of SenbayFormat (Version 0 ~ 4) from a SenbayFormat text. _
 
+
+
+## Adding the library to your iOS project
+### CocoaPods
+1. Install [CocoaPod](https://guides.cocoapods.org/using/getting-started.html#toc_3) on your computer
+2. Create a [Podfile](https://guides.cocoapods.org/using/using-cocoapods.html), and add your dependencies:
+```
+  pod 'SenbayFormat'
+```
+3. Run $ Pod install in your project directory.
+4. Open App.xcworkspace and build.
+
+### Directly
+1. First, you should copy following files from SenbayFormat.
+
+  * ReservedKeys.h
+  * ReservedKeys.m
+  * SenbayDataFormatCompressor.h
+  * SenbayDataFormatCompressor.m
+  * SensorDataManager.h
+  * SensorDataManager.m
+  * SpecialNumber.h
+  * SpecialNumber.m
+
+2. Second, please import ``SenbayDataFormatCompressor.h`` and ``SensorDataManager.h`` at your target file.
+
+  ```Objective-C
+  #import "SenbayDataFormatCompressor.h" 
+  #import "SensorDataManager.h"
+  ```
+
+3. Finally, you will initialize SenbayDataFormatCompressor and SensorDataManager
+
+  ```Objective-C
+  SenbayDataFormatCompressor* compressor = [[SenbayDataFormatCompressor alloc] init];
+  SensorDataManager* manager = [[SensorDataManager alloc] init];
+  ```
+
+
+
+
 ## Sample Code
 Please open a Project on Xcode through double clicking `SenbayFormat.xcodeproj`.
 
@@ -153,32 +194,6 @@ NSLog(@"%@", [manager getDataByKey:@"ACCX"]);
 NSLog(@"%@", [manager getDataByKey:@"ACCY"]);
 NSLog(@"%@", [manager getDataByKey:@"ACCZ"]);
 ```
-
-## Adding the library to your iOS project
-1. First, you should copy following files from SenbayFormat.
-
-  * ReservedKeys.h
-  * ReservedKeys.m
-  * SenbayDataFormatCompressor.h
-  * SenbayDataFormatCompressor.m
-  * SensorDataManager.h
-  * SensorDataManager.m
-  * SpecialNumber.h
-  * SpecialNumber.m
-
-2. Second, please import ``SenbayDataFormatCompressor.h`` and ``SensorDataManager.h`` at your target file.
-
-  ```Objective-C
-  #import "SenbayDataFormatCompressor.h" 
-  #import "SensorDataManager.h"
-  ```
-
-3. Finally, you will initialize SenbayDataFormatCompressor and SensorDataManager
-
-  ```Objective-C
-  SenbayDataFormatCompressor* compressor = [[SenbayDataFormatCompressor alloc] init];
-  SensorDataManager* manager = [[SensorDataManager alloc] init];
-  ```
 
 
 ## Links
