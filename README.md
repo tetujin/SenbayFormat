@@ -17,15 +17,15 @@ In the sample codes, we will show you following points.
 
 ## Adding the library to your iOS project
 ### CocoaPods
-1. Install [CocoaPod](https://guides.cocoapods.org/using/getting-started.html#toc_3) on your computer
-2. Create a [Podfile](https://guides.cocoapods.org/using/using-cocoapods.html), and add your dependencies:
+- Install [CocoaPod](https://guides.cocoapods.org/using/getting-started.html#toc_3) on your computer
+- Create a [Podfile](https://guides.cocoapods.org/using/using-cocoapods.html), and add your dependencies:
 
 ```
   pod 'SenbayFormat'
 ```
 
-3. Run `$ Pod install` in your project directory.
-4. Open `App.xcworkspace` and build.
+- Run `$ Pod install` in your project directory.
+- Open `App.xcworkspace` and build.
 
 
 ### Directly
